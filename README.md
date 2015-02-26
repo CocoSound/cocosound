@@ -1,2 +1,3 @@
-# cocosound
-dossier principal du projet CocoSound
+# CocoSound
+projet tuteuré CocoSound
+
