@@ -8,12 +8,12 @@ html, body {
 	width: 100%;
 	margin: 0px;
 }
+
 #header {
-	background-color: #7C7C7C;
+	background-color: #272727;
 	height: 160px;
 	width: 100%;
 	min-width: 970px;
-	border-bottom: solid white 1px
 }
 
 #logo {
@@ -81,91 +81,45 @@ html, body {
 #########################            MAIN         ##################################
 ##################################################################################*/
 
-#main{
-	height: 637px;
+#main {
 	width:	100%;
+	min-width: 985px;
+  	min-height: 513px;
+  	background:	url(../assets/palmier.jpg) no-repeat;
+  	background-size: 1600px 513px;
+  	text-align: center;
+  	line-height: 515px;
 }
+
 /*##################################################################################
 #########################            SEARCH BAR MAIN         #######################
 ##################################################################################*/
      
-    .cf:before, .cf:after{
-      content:"";
-      display:block;
-    }
-    
-    .cf:after{
-      clear:both;
-    }
-    
-    .form-wrapper {
-        width: 450px;
-        padding: 20px;
-        margin: 10% 0px 0px 30%;
-        background: #444;
-        background: rgba(0,0,0,.2);
-        -moz-border-radius: 10px;
-        -webkit-border-radius: 10px;
-        border-radius: 10px;
-        -moz-box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
-        -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
-        box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
-        position: relative;
+#searchbar {
+	display: inline-block;
+	vertical-align: middle;
+}
 
-    }
-    
-    .form-wrapper input {
-        width: 330px;
-        height: 20px;
-        padding: 10px 5px;
-        float: left;    
-        font: bold 15px 'lucida sans', 'trebuchet MS', 'Tahoma';
-        border: 0;
-        background: #eee;
-        -moz-border-radius: 3px 0 0 3px;
-        -webkit-border-radius: 3px 0 0 3px;
-        border-radius: 3px 0 0 3px;      
-    }
-    
-    .form-wrapper input:focus {
-        outline: 0;
-        background: #fff;
-        -moz-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
-        -webkit-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
-        box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
-    }
-    
-    .form-wrapper button {
-		overflow: visible;
-        position: relative;
-        float: right;
-        border: 0;
-        padding: 0;
-        cursor: pointer;
-        height: 40px;
-        width: 110px;
-        font: bold 15px/40px 'lucida sans', 'trebuchet MS', 'Tahoma';
-        color: #darkgrey;
-        text-transform: uppercase;
-        background: #ffab23;
-        -moz-border-radius: 0 3px 3px 0;
-        -webkit-border-radius: 0 3px 3px 0;
-        border-radius: 0 3px 3px 0;      
-        text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
-    }   
+#bothsearch {
+
+}
+#searchbar input {
+
+}
+
+#searchbar button {
+
+}
   
 /*##################################################################################
 #########################            FOOTER         ################################
 ##################################################################################*/
 
 #footer {
-	position:fixed;
-	bottom:0;
-	left:0;
 	height:100px;
 	width: 100%;
-	background: #7C7C7C;
-	border-top:	solid white 1px;
+	background: #272727;
+	min-width: 577px;
 }
 
 #design {
@@ -175,18 +129,20 @@ html, body {
 	margin: 50px;
 	display:inline-block;
 	font-weight: bold;
+	color: #FFF
 }
 
 #noms {
-	height: 30px;
-	width: 330px;
+	height: 38px;
+	width: 370px;
 	border: solid black 1px;
 	background-color: #FFFFFF;
 	text-align: left;
 	margin:	auto;
 	display: inline-block;
 	font-family: fantasy;
-	padding-left: 10px;
+	font-size: 17pt;
+	padding-left: 6px;
 	padding-top: 10px;
 	border-radius: 30px;
 }
