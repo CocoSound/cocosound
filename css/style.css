@@ -91,10 +91,19 @@ html, body {
   	background-size: 1600px 513px;
 }
 
+form{
+	text-align: center;
+	position: absolute;
+	bottom: 300;
+	left : 200;
+	
+}
+
 /*##################################################################################
 #########################            SEARCH BAR MAIN         #######################
 ##################################################################################*/
-
+	position: absolute;
+	bottom: 0;
 #container {
 	width: 100%;
 	height:	513px;

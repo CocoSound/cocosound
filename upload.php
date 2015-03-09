@@ -31,6 +31,6 @@ if( isset($_POST['upload']) ) // si formulaire soumis
     echo "Le fichier a bien été uploadé";
 }
 
-include('/media/KINGSTON/testcocosound/index.html');
+include('/media/KINGSTON/cocosound/upload.html');
 
 ?>
