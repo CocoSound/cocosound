@@ -7,6 +7,9 @@ html, body {
 	height: 100%;
 	width: 100%;
 	margin: 0px;
+	padding: 0px;
+	background: url(../assets/palmier.jpg) no-repeat center fixed; 
+  	background-size: cover;
 }
 
 #header {
@@ -85,7 +88,6 @@ html, body {
 	width:	100%;
 	min-width: 985px;
   	min-height: 513px;
-  	background:	url(../assets/palmier.jpg) no-repeat;
   	background-size: 1600px 513px;
 }
 
@@ -166,6 +168,8 @@ html, body {
 	width: 100%;
 	background: #272727;
 	min-width: 577px;
+	position: absolute;
+	bottom: 0;
 }
 
 #design {
