@@ -13,17 +13,17 @@
 #########################            SIGN UP MAIN         ##########################
 ##################################################################################*/
 
-#signup {
+#signin {
 	width: 100%;
 	height:	513px;
 }
 
-#signupform {
+#signinform {
 	position: relative;
 	width: 500px;
-	height: 90%;
+	height: 70%;
   	left: 30%;
-  	top: 2%;
+  	top: 15%;
 	background-color: rgba(39, 39, 39, 0.8);
 	padding: 15px;
 	border-radius: 25px;
@@ -31,13 +31,13 @@
 	border-color: rgba(223, 116, 1, 0.6);
 }
 
-#signup_submit {
+#signin_submit {
 	display: block;
 	text-align: center;
 	width: 250px;
 	margin-left: 25%;
 	margin-bottom: 50px;
-	margin-top: 25px;
+	margin-top: 75px;
 	border-radius: 10px;height:	50px;
 	margin-right: 5px;
 	font-size: 12pt;
@@ -46,7 +46,7 @@
   	color: white;
 }
 
-#signup form label {
+#signin form label {
 	margin-left: 25%;
 	margin-bottom: 50px;
 	margin-top: 5px;

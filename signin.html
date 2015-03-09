@@ -4,6 +4,7 @@
    		<meta charset='UTF-8'/>
     	<title>Coco Sound</title>
 		<link rel="stylesheet" href="css/style.css" type="text/css"/>
+		<link rel="stylesheet" href="css/signin.css" type="text/css"/>
    </head>
    <body>
 		<header id="header">
@@ -14,10 +15,13 @@
 			<a href="signin.html" class="myButton">Connexion</a>
 		</header>
 		<div id="main">
-			<div id="container">
-				<form id="searchbar">
-					<input type="text" placeholder="Search here..." required>
-					<button type="submit">Search</button>
+			<div id="signin">
+				<form id="signinform">
+					<label for="identifiant">Identifiant</label>
+					<input class="inputform"type="text" name="identifiant" placeholder="Tapez votre identifiant" required>
+					<label for="password">Mot de passe</label>
+					<input class="inputform" type="password" name="password" placeholder="Tapez votre mot de passe" required>
+					<input id="signin_submit" type="submit" name="submit_signup">
 				</form>
 			</div>
 		</div>
@@ -26,7 +30,7 @@
 				Designed by
 			</div>
 			<div id="noms"> 
-				Aline, Cyril, Bertrand, Thomas and Kilian
+					Aline, Cyril, Bertrand, Thomas and Kilian
 			</div>
 		</footer>
    </body>
