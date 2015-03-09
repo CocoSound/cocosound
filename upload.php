@@ -1,5 +1,8 @@
 <meta charset="utf-8"/>
+
+
 <?php
+
 
 if( isset($_POST['upload']) ) // si formulaire soumis
 {
@@ -15,7 +18,7 @@ if( isset($_POST['upload']) ) // si formulaire soumis
     // on vérifie maintenant l'extension
     $type_file = $_FILES['fichier']['type'];
 
-    if( !strstr($type_file, 'mp3') && !strstr($type_file, 'm4a') && !strstr($type_file, 'mp4') && !strstr($type_file, 'mpeg') )
+    if( !strstr($type_file, 'mp3') && !strstr($type_file, 'mpeg') )
     {
         exit("Le fichier n'est pas valide");
     }
