@@ -3,7 +3,7 @@
 
 if( isset($_POST['upload']) ) // si formulaire soumis
 {
-    $content_dir = '/media/KINGSTON/testcocosound/upload/'; // dossier où sera déplacé le fichier
+    $content_dir = '/media/KINGSTON/cocosound/upload/'; // dossier où sera déplacé le fichier
 
     $tmp_file = $_FILES['fichier']['tmp_name'];
 
