@@ -184,8 +184,8 @@ form{
 	width: 100%;
 	background: #272727;
 	min-width: 577px;
-	position: relative;
-	bottom: 0px;
+	position: absolute;
+	bottom: 0%;
 	height: 102px;
 }
 
