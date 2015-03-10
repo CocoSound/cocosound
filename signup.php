@@ -16,7 +16,7 @@
 			</header>
 			<div id="main">
 				<div id="signup">
-					<form id="signupform">
+					<form id="signupform"method="post" action="signup_validate.php">
 						<label for="identifiant">Identifiant</label>
 						<input class="inputform"type="text" name="identifiant" placeholder="Tapez votre identifiant" required>
 						<label for="password">Mot de passe</label>

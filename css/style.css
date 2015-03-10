@@ -109,12 +109,13 @@ form{
 /*##################################################################################
 #########################            SEARCH BAR MAIN         #######################
 ##################################################################################*/
-	position: absolute;
-	bottom: 0;
+
+
 #container {
 	width: 100%;
 	height:	513px;
 }
+
 #searchbar {
 	position: relative;
 	width: 325px;
@@ -180,12 +181,12 @@ form{
 ##################################################################################*/
 
 #footer {
-	height:100px;
 	width: 100%;
 	background: #272727;
 	min-width: 577px;
-	position: absolute;
-	bottom: 0;
+	position: relative;
+	bottom: 0px;
+	height: 102px;
 }
 
 #design {
