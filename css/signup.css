@@ -1,13 +1,3 @@
-/*##################################################################################
-#########################            MAIN         ##################################
-##################################################################################*/
-
-#main {
-	width:	100%;
-	min-width: 985px;
-  	min-height: 513px;
-  	background-size: 1600px 513px;
-}
 
 /*##################################################################################
 #########################            SIGN UP MAIN         ##########################
@@ -15,20 +5,22 @@
 
 #signup {
 	width: 100%;
-	height:	513px;
+	height:	100%;
+	min-height: 550px;
 }
 
 #signupform {
 	position: relative;
 	width: 500px;
-	height: 90%;
+	height: 61%;
   	left: 30%;
-  	top: 2%;
+  	top: 13%;
 	background-color: rgba(39, 39, 39, 0.8);
 	padding: 15px;
 	border-radius: 25px;
 	border: solid 4px;
 	border-color: rgba(223, 116, 1, 0.6);
+	min-height: 430px;
 }
 
 #signup_submit {
@@ -61,4 +53,56 @@
 	margin-top: 5px;
 	border-radius: 10px;
 	border: solid #c96400 2px;
+}
+
+/*##################################################################################
+#########################            MESSAGE RETOUR        #########################
+##################################################################################*/
+
+.created {
+	line-height: 40px;
+	width: 220px;
+	border: 1px solid green;
+	border-radius: 21px;
+	margin-left: 40%;
+	background-color: green;
+	position: relative;
+	margin-top: 7%;
+}
+
+.created span {
+	vertical-align: middle;
+	padding-left: 23px;
+}
+
+.prblpass {
+	line-height: 40px;
+	width: 335px;
+	border: 1px solid red;
+	border-radius: 21px;
+	background-color: red;
+	position: relative;
+	margin-left: 37%;
+	margin-top: 7%;
+}
+
+.prblpass span {
+	vertical-align: middle;
+	padding-left: 31px;
+}
+
+.prblbdd {
+	line-height: 40px;
+	width: 335px;
+	border: 1px solid red;
+	border-radius: 21px;
+	background-color: red;
+	position: relative;
+	margin-left: 37%;
+	margin-top: 7%;
+}
+
+.prblbdd span {
+	vertical-align: middle;
+	padding-left: 31px;
 }

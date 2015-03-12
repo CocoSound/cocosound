@@ -10,9 +10,9 @@
 		<header id="header">
 			<img id="logo" src="assets/Logo.png" alt="Coco Sound"/>
 			<img id="titre"  src="assets/titre.png" alt="Coco Sound"/>
-			<a href="index.html" id="clickheader"></a>
-			<a href="signup.html" class="myButton">Inscription</a>
-			<a href="signin.html" class="myButton">Connexion</a>
+			<a href="index.php" id="clickheader"></a>
+			<a href="signup.php" class="myButton">Inscription</a>
+			<a href="signin.php" class="myButton">Connexion</a>
 		</header>
 		<div id="main">
 			<div id="signin">

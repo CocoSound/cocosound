@@ -16,7 +16,7 @@ html, body {
 	background-color: #272727;
 	height: 160px;
 	width: 100%;
-	min-width: 970px;
+	min-width: 989px;
 }
 
 #logo {
@@ -94,7 +94,8 @@ html, body {
 #main {
 	width:	100%;
 	min-width: 985px;
-  	min-height: 513px;
+  	min-height: 550px;
+	height: 73%;
   	background-size: 1600px 513px;
 }
 
@@ -184,9 +185,9 @@ form{
 	width: 100%;
 	background: #272727;
 	min-width: 577px;
-	position: absolute;
 	bottom: 0%;
-	height: 102px;
+	height: 101px;
+	min-width: 989px;
 }
 
 #design {

@@ -10,13 +10,40 @@
 			<header id="header">
 				<img id="logo" src="assets/Logo.png" alt="Coco Sound"/>
 				<img id="titre"  src="assets/titre.png" alt="Coco Sound"/>
-				<a href="index.html" id="clickheader"></a>
-				<a href="signup.html" class="myButton">Inscription</a>
-				<a href="signin.html" class="myButton">Connexion</a>
+				<a href="index.php" id="clickheader"></a>
+				<a href="signup.php" class="myButton">Inscription</a>
+				<a href="signin.php" class="myButton">Connexion</a>
 			</header>
 			<div id="main">
+				<?php
+
+						try
+						{
+							$bdd = new PDO('mysql:host=localhost;dbname=cocosound;charset=utf8', 'root', '');
+						}
+						catch(Exception $e)
+						{
+								$message="bdd";
+						}
+
+						if (isset($_POST['password'])  && isset($_POST['passwordbis']))
+						{
+
+							if ($_POST['password'] == $_POST['passwordbis'])
+							{
+								$id = $_POST['identifiant'];
+								$pass = $_POST['password'];
+								$reponse = $bdd->query("INSERT INTO utilisateur(identifiant, password) VALUES('$id','$pass')");
+								$message="ok";
+							}
+							else
+							{
+								$message="pass";
+							}
+						}
+				?>
 				<div id="signup">
-					<form id="signupform"method="post" action="signup_validate.php">
+					<form id="signupform"method="post" action="signup.php">
 						<label for="identifiant">Identifiant</label>
 						<input class="inputform"type="text" name="identifiant" placeholder="Tapez votre identifiant" required>
 						<label for="password">Mot de passe</label>
@@ -25,6 +52,20 @@
 						<input class="inputform" type="password" name="passwordbis" placeholder="Tapez à nouveau votre mot de passe" required>	
 						<input id="signup_submit" type="submit" name="submit_signup">
 					</form>
+					<?php if (isset($message))
+							{
+								if ($message == "ok"){
+									echo "<div class='created'><span>Votre compte a été créer !</span></div>";
+								}
+								else if ($message == "pass") {
+									echo "<div class='prblpass'><span>Vos mots de passe ne correspondent pas !</span></div>";
+								}
+								else {
+									echo "<div class='prblbdd'><span>Probleme sur la base de données !</span></div>";
+								}
+							}
+						
+					?>
 				</div>
 			</div>
 			
@@ -35,7 +76,6 @@
 				<div id="noms"> 
 						Aline, Cyril, Bertrand, Thomas and Kilian
 				</div>
-
 			</footer>
    </body>
 </html>
