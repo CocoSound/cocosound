@@ -7,6 +7,7 @@
 		<link rel="stylesheet" href="css/signup.css" type="text/css"/>
    </head>
    <body>
+			<script src="http://code.jquery.com/jquery-latest.js"></script>
 			<header id="header">
 				<img id="logo" src="assets/Logo.png" alt="Coco Sound"/>
 				<img id="titre"  src="assets/titre.png" alt="Coco Sound"/>
@@ -55,17 +56,20 @@
 					<?php if (isset($message))
 							{
 								if ($message == "ok"){
-									echo "<div class='created'><span>Votre compte a été créer !</span></div>";
+									echo "<div id='returnmessage' class='created'><span>Votre compte a été créer !</span></div>";
 								}
 								else if ($message == "pass") {
-									echo "<div class='prblpass'><span>Vos mots de passe ne correspondent pas !</span></div>";
+									echo "<div id='returnmessage' class='prblpass'><span>Vos mots de passe ne correspondent pas !</span></div>";
 								}
 								else {
-									echo "<div class='prblbdd'><span>Probleme sur la base de données !</span></div>";
+									echo "<div id='returnmessage' class='prblbdd'><span>Probleme sur la base de données !</span></div>";
 								}
 							}
 						
 					?>
+					<script type="text/javascript">
+						$('#returnmessage').hide().fadeIn(800).delay(3000).fadeOut(800);
+					</script>
 				</div>
 			</div>
 			

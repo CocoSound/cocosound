@@ -13,7 +13,7 @@
 	position: relative;
 	width: 500px;
 	height: 61%;
-  	left: 30%;
+  	left: 35%;
   	top: 13%;
 	background-color: rgba(39, 39, 39, 0.8);
 	padding: 15px;
@@ -61,10 +61,10 @@
 
 .created {
 	line-height: 40px;
-	width: 220px;
+	width: 240px;
 	border: 1px solid green;
 	border-radius: 21px;
-	margin-left: 40%;
+	left: 43%;
 	background-color: green;
 	position: relative;
 	margin-top: 7%;
@@ -72,7 +72,7 @@
 
 .created span {
 	vertical-align: middle;
-	padding-left: 23px;
+	padding-left: 34px;
 }
 
 .prblpass {
@@ -82,7 +82,7 @@
 	border-radius: 21px;
 	background-color: red;
 	position: relative;
-	margin-left: 37%;
+	left: 41%;
 	margin-top: 7%;
 }
 
