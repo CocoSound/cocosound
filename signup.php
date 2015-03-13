@@ -7,7 +7,8 @@
 		<link rel="stylesheet" href="css/signup.css" type="text/css"/>
    </head>
    <body>
-			<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<div id="wrapper">
 			<header id="header">
 				<img id="logo" src="assets/Logo.png" alt="Coco Sound"/>
 				<img id="titre"  src="assets/titre.png" alt="Coco Sound"/>
@@ -81,5 +82,6 @@
 						Aline, Cyril, Bertrand, Thomas and Kilian
 				</div>
 			</footer>
+		</div>
    </body>
 </html>

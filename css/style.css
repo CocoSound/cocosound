@@ -12,10 +12,16 @@ html, body {
   	background-size: cover;
 }
 
+#wrapper {
+	min-height: 100%;
+	position: relative;
+}
+
 #header {
 	background-color: #272727;
-	height: 160px;
+	height: 20%;
 	width: 100%;
+	min-height: 155px;
 	min-width: 989px;
 }
 
@@ -73,7 +79,7 @@ html, body {
 	text-shadow:0px 1px 0px #ffee66;
 	float: right;
 	margin-right: 3px;
-	margin-top: 125px;
+	margin-top: 130px;
 }
 .myButton:hover {
 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffab23), color-stop(1, #ffec64));
@@ -94,8 +100,7 @@ html, body {
 #main {
 	width:	100%;
 	min-width: 985px;
-  	min-height: 550px;
-	height: 73%;
+	height: 68%;
   	background-size: 1600px 513px;
 }
 
@@ -185,8 +190,11 @@ form{
 	width: 100%;
 	background: #272727;
 	min-width: 577px;
-	bottom: 0%;
-	height: 101px;
+	bottom: 0;
+	left: 0;
+	height: 12%;
+	position: absolute;
+	min-height: 93px;
 	min-width: 989px;
 }
 
