@@ -3,8 +3,15 @@
    <head>
    		<meta charset='UTF-8'/>
     	<title>Coco Sound</title>
-		<link rel="stylesheet" href="css/style.css" type="text/css"/>
-		<link rel="stylesheet" href="css/signin.css" type="text/css"/>
+
+    	<meta name="viewport" content="width=device-width"/>
+
+		<link rel="stylesheet" type="text/css" media="screen and (min-width: 750px)" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" media="screen and (min-width: 750px)" href="css/signin.css"/>
+
+		<link rel="stylesheet" type="text/css" media="screen and (max-width: 750px)" href="css/style_responsive.css" />
+		<link rel="stylesheet" type="text/css" media="screen and (max-width: 750px)" href="css/signin_responsive.css"/>
+
    </head>
    <body>
    		<div id="wrapper">

@@ -3,7 +3,12 @@
    <head>
    	<meta charset='UTF-8'/>
     	<title>Upload</title>
-	<link rel="stylesheet" href="css/style.css" type="text/css"/>
+
+    	<meta name="viewport" content="width=device-width"/>
+
+		<link rel="stylesheet" type="text/css" media="screen and (min-width: 750px)" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" media="screen and (max-width: 750px)" href="css/style_responsive.css" />
+
    </head>
    	<body>
 		<form method="post" enctype="multipart/form-data" action="upload.php">
@@ -12,6 +17,7 @@
 			<input type="submit" name="upload" value="Uploader">
 			</p>
 		</form>
+
 		<?php
 			if( isset($_POST['upload']) ) // si formulaire soumis
 			{
@@ -42,6 +48,7 @@
 
 			    echo "Le fichier a bien été uploadé";
 			}
-		?>		
+		?>	
+			
  	</body>
  </html>
