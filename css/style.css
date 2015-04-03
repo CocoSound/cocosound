@@ -193,8 +193,7 @@ form{
 	bottom: 0;
 	left: 0;
 	height: 12%;
-	position: absolute;
-	min-height: 93px;
+	min-height: 80px;
 	min-width: 989px;
 }
 
@@ -202,7 +201,7 @@ form{
 	height: 30px;
 	width: 95px;
 	text-align: center;
-	margin: 50px;
+	margin: 20px;
 	display:inline-block;
 	font-weight: bold;
 	color: #FFF
@@ -210,7 +209,7 @@ form{
 
 #noms {
 	height: 38px;
-	width: 380px;
+	width: 480px;
 	border: solid black 1px;
 	background-color: #FFFFFF;
 	text-align: left;
