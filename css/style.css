@@ -48,6 +48,7 @@ html, body {
 	left: 0px;
 
 }
+
 /*##################################################################################
 #########################            HEADER BUTTONS         ########################
 ##################################################################################*/
@@ -187,13 +188,11 @@ form{
 ##################################################################################*/
 
 #footer {
+	position: absolute;
 	width: 100%;
 	background: #272727;
 	min-width: 577px;
 	bottom: 0;
-	left: 0;
-	height: 12%;
-	min-height: 80px;
 	min-width: 989px;
 }
 
@@ -202,7 +201,7 @@ form{
 	width: 95px;
 	text-align: center;
 	margin: 20px;
-	display:inline-block;
+	display: inline-block;
 	font-weight: bold;
 	color: #FFF
 }
@@ -210,10 +209,10 @@ form{
 #noms {
 	height: 38px;
 	width: 480px;
+	margin-top: 20px;
 	border: solid black 1px;
 	background-color: #FFFFFF;
 	text-align: left;
-	margin:	auto;
 	display: inline-block;
 	font-family: fantasy;
 	font-size: 17pt;
