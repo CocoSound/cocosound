@@ -16,6 +16,7 @@
     	<title>Upload</title>
     	<meta name="viewport" content="width=device-width"/>
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/upload.css" />
    </head>
    	<body>
 			<header id="header">
@@ -53,10 +54,10 @@
 
 					if(isset($identifiant))
 					{	
-						echo('<div><a href="index.php" class="myButton">Homepage</a>');
-						echo('<a href="" class="myButton">Compte</a>');
+						echo('<div id="headerbuttons"><a href="index.php" class="myButton">Homepage</a>');
+						echo('<a href="account.php" class="myButton">Compte</a>');
 						echo('<a href="upload.php" class="myButton">Upload</a>');
-						echo('<a href="" class="myButton">Mes musiques</a></div></div>');
+						echo('<a href="mysounds.php" class="myButton">Mes musiques</a></div></div>');
 					}
 					else
 					{
@@ -103,11 +104,14 @@
 					}
 				?>
 			</header>
-		<form method="post" enctype="multipart/form-data" action="upload.php">
-			<p>
-			<input type="file" name="fichier" size="30">
-			<input type="submit" name="upload" value="Uploader">
-			</p>
+		<form id ="upload" method="post" enctype="multipart/form-data" action="upload.php">
+			<div id="wrapper1"><input type="file" name="fichier" size="30"></div>
+			<div id="soundinputs">
+				<aside .align><input type="text" name="Titre" placeholder="Titre"></aside>
+				<aside .align><input type="text" name="Artiste" placeholder="Artiste"></aside>
+				<aside .align><input type="text" name="Style" placeholder="Style"></aside>
+			</div>
+			<div id="wrapper2"><input type="submit" name="upload" value="Upload"></div>
 		</form>
 		<?php
 			if( isset($_POST['upload']) ) // si formulaire soumis

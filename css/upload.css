@@ -1,0 +1,56 @@
+#upload {
+	text-align:	center;
+	line-height: 30px;
+	min-width: 800px;
+}
+
+#soundinputs {
+	text-align: center;
+	margin-top: 40px;
+}
+
+#soundinputs input {
+	display: inline-block;
+	height: 25px;
+	margin: 5px;
+	border-radius: 20px;
+	padding: 5px;
+	border: solid black 1px;
+}
+
+.align {
+	width: 100%;
+}
+
+#wrapper1 {
+	display: inline-block;
+	width: 100%;
+	margin-top: 20px;
+}
+
+#wrapper1 input:first-child {
+	font-weight: bold;
+	color: white;
+	width: 175px;
+}
+
+#wrapper2 {
+	display: inline-block;
+	width: 100%;
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+
+#wrapper1 input {
+	font-size: 13pt;
+	width: 40%;
+	padding-bottom: 20px;
+}
+
+#wrapper2 input {
+	font-size: 15pt;
+	border:	solid black 1px;
+	background-color: rgba(220,0,0,0.8);
+	border-radius: 5px;
+	width: 10%;
+}
