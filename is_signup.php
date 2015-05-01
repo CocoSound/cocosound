@@ -52,7 +52,7 @@
 
 					if(isset($identifiant))
 					{	
-						echo('<div><a href="index.php" class="myButton">Homepage</a>');
+						echo('<div><a href="index.php" class="myButton">Accueil</a>');
 						echo('<a href="account.php" class="myButton">Compte</a>');
 						echo('<a href="upload.php" class="myButton">Upload</a>');
 						echo('<a href="mysounds.php" class="myButton">Mes musiques</a></div></div>');

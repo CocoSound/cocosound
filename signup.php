@@ -52,7 +52,7 @@
 
 					if(isset($identifiant))
 					{	
-						echo('<div><a href="index.php" class="myButton">Homepage</a>');
+						echo('<div><a href="index.php" class="myButton">Accueil</a>');
 						echo('<a href="" class="myButton">Compte</a>');
 						echo('<a href="upload.php" class="myButton">Upload</a>');
 						echo('<a href="" class="myButton">Mes musiques</a></div></div>');
@@ -60,7 +60,7 @@
 					else
 					{
 						echo('<div><a href="signup.php" class="myButton">Inscription</a></div>');
-						echo('<div><a href="index.php" class="myButton">Homepage</a>');
+						echo('<div><a href="index.php" class="myButton">Accueil</a>');
 					}
 					if(isset($_POST["identifiant"]) && isset($_POST["password"]))
 						{
