@@ -103,8 +103,13 @@
 			<div id="main">
 				<div id="container">
 					<form id="searchbar">
-						<input type="text" placeholder="Search here..." required>
-						<button type="submit">Search</button>
+						<input type="text" placeholder="Recherchez..." required>
+						<button type="submit">Recherche</button>
+						<select>
+  							<option>par Artiste</option>
+  							<option>par Titre</option>
+  							<option>par Album</option>
+						</select>
 					</form>
 				</div>
 			</div>
