@@ -141,26 +141,28 @@
 							echo('<p>Le fichier n\'est pas valide</p>');
 						}
 						else{
-							// on copie le fichier dans le dossier de destination
-								$name_file = $_FILES['fichier']['name'];
+								// on créer une instance dans la table "Uploader" qui lie les tables Utilisateur et musique
+								$query3=$bdd->prepare('INSERT INTO uploader(Artiste, Titre, Identifiant) VALUES(:val1, :val2, :val3)');
+								$query3->execute(array('val1'=>$_POST['Artiste'], 'val2'=>$_POST['Titre'], 'val3'=>$identifiant[0]));
 								
-								$query3 = $bdd->prepare('SELECT Titre, Artiste FROM musique WHERE Titre=? AND Artiste=?');
-								$query3->execute(array($_POST['Titre'],$_POST['Artiste']));
-								if(!(strtolower($_POST['Titre']) == strtolower($query3->fetchColumn(0)))&&(!(strtolower($_POST['Artiste'])==strtolower($query3->fetchColumn(1))))){
+								// Si le morceau n'est pas déjà dans la base on copie le fichier dans le dossier de destination
+								$name_file = $_FILES['fichier']['name'];
+								$query4 = $bdd->prepare('SELECT Titre, Artiste FROM musique WHERE Titre=? AND Artiste=?');
+								$query4->execute(array($_POST['Titre'],$_POST['Artiste']));
+								
+								if(!(strtolower($_POST['Titre']) == strtolower($query4->fetchColumn(0)))&&(!(strtolower($_POST['Artiste'])==strtolower($query4->fetchColumn(1))))){
 									move_uploaded_file($emplacementTemporaire, $content_dir . basename($name_file));
 									echo('<p>Le fichier a bien été uploadé</p>');
+									
+									//Et on ajoute une instance dans la base
 									$query5=$bdd->prepare('INSERT INTO musique(Artiste, Titre, Genre, Chemin_Musique) VALUES(:val1, :val2, :val3, :val4)');
 									$query5->execute(array('val1'=>$_POST['Artiste'], 'val2'=>$_POST['Titre'], 'val3'=>$_POST['Style'], 'val4'=>$content_dir.$name_file));
 								}
-								else{
-										echo('<p> Titre existant </p>');
-								}
+					
 							}
 					}
 			}
-			else{
-				echo "probleme";
-			}
+
 			
 		?>
 		</form>
