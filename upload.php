@@ -76,11 +76,11 @@
 
 						$identifiant = $_POST['identifiant'];
 						$password = $_POST['password'];
-						$query = $bdd->prepare('SELECT identifiant FROM user WHERE identifiant = ?');
+						$query = $bdd->prepare('SELECT Identifiant FROM utilisateur WHERE Identifiant = ?');
 						$query->execute(array($identifiant));
 						if($identifiant = $query->fetch()) 
 						{ 
-							$query2 = $bdd->prepare('SELECT password FROM user WHERE identifiant = ?');
+							$query2 = $bdd->prepare('SELECT Mot_De_Passe FROM utilisateur WHERE Identifiant = ?');
 							$query2->execute(array($identifiant[0]));
 							$pwdtest = $query2->fetch();
 							if($password != $pwdtest['0'])
@@ -104,47 +104,67 @@
 					}
 				?>
 			</header>
-		<form id ="upload" method="post" enctype="multipart/form-data" action="upload.php">
-			<div id="wrapper1"><input type="file" name="fichier" size="30"></div>
+		<form id ="upload" method="post" action="upload.php" enctype="multipart/form-data">
+			<div id="wrapper1"><input type="file" name="fichier" size="300000000000"></div>
 			<div id="soundinputs">
 				<aside .align><input type="text" name="Titre" placeholder="Titre"></aside>
 				<aside .align><input type="text" name="Artiste" placeholder="Artiste"></aside>
 				<aside .align><input type="text" name="Style" placeholder="Style"></aside>
 			</div>
 			<div id="wrapper2"><input type="submit" name="upload" value="Upload"></div>
-		</form>
 		<?php
 			if( isset($_POST['upload']) ) // si formulaire soumis
 			{
-			    $content_dir = './upload/'; // dossier où sera déplacé le fichier
+			try 
+				{
+					$bdd = new PDO('mysql:host=localhost;dbname=cocosound;charset=utf8', 'root', '');
+				}
+					catch (Exception $e)
+				{
+					die('Erreur : ' . $e->getMessage());
+				}
+			    
+				$content_dir = './upload/'; // dossier où sera déplacé le fichier
+			    $emplacementTemporaire = $_FILES['fichier']['tmp_name'];
 
-			    $tmp_file = $_FILES['fichier']['tmp_name'];
-
-			    if( !is_uploaded_file($tmp_file) )
+			    if( !is_uploaded_file($emplacementTemporaire) )
 			    {
-			        exit("Le fichier est introuvable");
+			        echo('<p>Le fichier est introuvable</p>');
 			    }
-
-			    // on vérifie maintenant l'extension
-			    $type_file = $_FILES['fichier']['type'];
-
-			    if( !strstr($type_file, 'mp3') && !strstr($type_file, 'm4a') && !strstr($type_file, 'mp4') && !strstr($type_file, 'mpeg') )
-			    {
-			        exit("Le fichier n'est pas valide");
-			    }
-
-			    // on copie le fichier dans le dossier de destination
-			    $name_file = $_FILES['fichier']['name'];
-
-			    if( !move_uploaded_file($tmp_file, $content_dir . $name_file) )
-			    {
-			        exit("Impossible de copier le fichier dans $content_dir");
-			    }
-
-			    echo "Le fichier a bien été uploadé";
+				else{
+						// on vérifie maintenant l'extension
+						$infosfichier = pathinfo($_FILES['fichier']['name']);
+						$type_file = $infosfichier['extension'];
+						$ext_autorisees= array('mp3','m4a','mp4','mpeg');
+						
+						if(!in_array($type_file,$ext_autorisees)){
+							echo('<p>Le fichier n\'est pas valide</p>');
+						}
+						else{
+							// on copie le fichier dans le dossier de destination
+								$name_file = $_FILES['fichier']['name'];
+								
+								$query3 = $bdd->prepare('SELECT Titre, Artiste FROM musique WHERE Titre=? AND Artiste=?');
+								$query3->execute(array($_POST['Titre'],$_POST['Artiste']));
+								if(!(strtolower($_POST['Titre']) == strtolower($query3->fetchColumn(0)))&&(!(strtolower($_POST['Artiste'])==strtolower($query3->fetchColumn(1))))){
+									move_uploaded_file($emplacementTemporaire, $content_dir . basename($name_file));
+									echo('<p>Le fichier a bien été uploadé</p>');
+									$query5=$bdd->prepare('INSERT INTO musique(Artiste, Titre, Genre, Chemin_Musique) VALUES(:val1, :val2, :val3, :val4)');
+									$query5->execute(array('val1'=>$_POST['Artiste'], 'val2'=>$_POST['Titre'], 'val3'=>$_POST['Style'], 'val4'=>$content_dir.$name_file));
+								}
+								else{
+										echo('<p> Titre existant </p>');
+								}
+							}
+					}
 			}
-		?>	
-		<footer id="footer">
+			else{
+				echo "probleme";
+			}
+			
+		?>
+		</form>
+		<!--<footer id="footer">
 			<div id="design">
 				Designed by
 			</div>
@@ -152,5 +172,6 @@
 				Aline, Cyril, Bertrand, Thomas and Kilian
 			</div>
 		</footer>
+		-->
  	</body>
  </html>

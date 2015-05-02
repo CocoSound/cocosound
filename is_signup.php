@@ -74,11 +74,11 @@
 
 						$identifiant = $_POST['identifiant'];
 						$password = $_POST['password'];
-						$query = $bdd->prepare('SELECT identifiant FROM user WHERE identifiant = ?');
+						$query = $bdd->prepare('SELECT Identifiant FROM utilisateur WHERE Identifiant = ?');
 						$query->execute(array($identifiant));
 						if($identifiant = $query->fetch()) 
 						{ 
-							$query2 = $bdd->prepare('SELECT password FROM user WHERE identifiant = ?');
+							$query2 = $bdd->prepare('SELECT Mot_De_Passe FROM utilisateur WHERE Identifiant = ?');
 							$query2->execute(array($identifiant[0]));
 							$pwdtest = $query2->fetch();
 							if($password != $pwdtest['0'])

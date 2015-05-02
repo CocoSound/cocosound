@@ -75,11 +75,11 @@
 
 						$identifiant = $_POST['identifiant'];
 						$password = $_POST['password'];
-						$query = $bdd->prepare('SELECT identifiant FROM user WHERE identifiant = ?');
+						$query = $bdd->prepare('SELECT Identifiant FROM utilisateur WHERE Identifiant = ?');
 						$query->execute(array($identifiant));
 						if($identifiant = $query->fetch()) 
 						{ 
-							$query2 = $bdd->prepare('SELECT password FROM user WHERE identifiant = ?');
+							$query2 = $bdd->prepare('SELECT Mot_De_Passe FROM utilisateur WHERE Identifiant = ?');
 							$query2->execute(array($identifiant[0]));
 							$pwdtest = $query2->fetch();
 							if($password != $pwdtest['0'])
@@ -131,7 +131,7 @@
 									$password1 = $_POST['signup_password'];
 									$password2 = $_POST['signup_passwordbis'];
 
-									$query = $bdd->prepare('SELECT identifiant FROM user WHERE identifiant= ?');
+									$query = $bdd->prepare('SELECT Identifiant FROM utilisateur WHERE Identifiant= ?');
 									$query->execute(array($identifiant));
 									if($identifiant = $query->fetch())
 									{
@@ -146,7 +146,7 @@
 										else
 										{
 											$date= date('Y-m-d');
-											$query=$bdd->prepare('INSERT INTO user( identifiant , password , role, inscription ) VALUES(:val1, :val2, :val3, :val4)');
+											$query=$bdd->prepare('INSERT INTO utilisateur( Identifiant , Mot_De_Passe , Role, Date_Inscription) VALUES(:val1, :val2, :val3, :val4)');
 											$query->execute(array('val1'=>$_POST['signup_identifiant'], 'val2'=>$_POST['signup_password'], 'val3'=>"user", 'val4'=> "$date"));
 											header ("Location: is_signup.php");
 										}
