@@ -166,8 +166,8 @@ html, body {
 
 #searchbar {
 	position: relative;
-	width: 325px;
-  	left: 40%;
+	width: 480px;
+	left: 30%;
   	top: 50%;
 	background-color: rgba(39, 39, 39, 0.7);
 	padding: 15px;
@@ -205,6 +205,12 @@ html, body {
 #searchbar button:hover {
 	background: linear-gradient(180deg, rgba(255,134,13,1) 0%, rgba(255,205,23,1) 100%);
 }
+
+form select {
+	border-radius: 10px;
+	height: 25px;
+}
+
 /*##################################################################################
 #########################            FOOTER         ################################
 ##################################################################################*/

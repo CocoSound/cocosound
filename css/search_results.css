@@ -1,0 +1,44 @@
+#print_results {
+	text-align: center;
+	font-size: 20pt;
+	background: rgba(255,255,255,0.5);
+}
+
+.rightborder {
+	border-right: solid black 1px;
+	width: 100%;
+	text-align: center;
+}
+
+#sound_container {
+	background-color: rgba(255,205,23,0.3);
+}
+
+.sound audio {
+	display: block;
+	margin-left: 2.5%;
+	width: 95%;
+}
+
+.title {
+	display: inline-block;
+	font-size: 14pt;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.artist {
+	display: inline-block;
+	font-size: 14pt;
+}
+
+.style {
+	display: inline-block;
+	font-style: italic;
+	margin-left: 15px;
+}
+
+.endline {
+	border-bottom: solid rgb(255,134,23) 3px;
+	margin-top: 10px
+}
