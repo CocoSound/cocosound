@@ -166,7 +166,7 @@
 			
 		?>
 		</form>
-		<!--<footer id="footer">
+		<footer id="footer">
 			<div id="design">
 				Designed by
 			</div>
@@ -174,6 +174,5 @@
 				Aline, Cyril, Bertrand, Thomas and Kilian
 			</div>
 		</footer>
-		-->
  	</body>
  </html>
