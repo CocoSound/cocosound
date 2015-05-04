@@ -20,6 +20,27 @@
    	<body>
 		<?php include("header.php"); ?>
 		<p>Page en cours de création</p>
+
+		<?php
+		try 
+			{
+			$bdd = new PDO('mysql:host=localhost;dbname=projetweb;charset=utf8', 'root', '');
+			}
+		catch (Exception $e)
+				{
+			    die('Erreur : ' . $e->getMessage());
+				}
+
+		//Affichage de la date d'inscription 
+		$query=$bdd->prepare('SELECT * FROM utilisateur WHERE Identifiant = ?');
+		$query->execute(array($identifiant[0]));
+		$resultat = $query->fetch();
+
+		echo'<p> Inscrit le '.$resultat['Date_Inscription'].'</p>';
+
+		$query->closeCursor();
+		?>
+
 	<?php include("footer.php"); ?>
  	</body>
  </html>
