@@ -40,7 +40,7 @@
 				}
 				else
 				{
-					echo('<div><a href="signup.php" class="myButton">Accueil</a></div>');
+					echo('<div><a href="index.php" class="myButton">Accueil</a></div>');
 					echo('<div><a href="signup.php" class="myButton">Inscription</a></div>');
 				}
 				if(isset($_POST["identifiant"]) && isset($_POST["password"]))
