@@ -18,10 +18,8 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
    </head>
    	<body>
-		<?php include("header.php"); ?>
-		<p>Page en cours de création</p>
+		<?php include("header.php"); 
 
-		<?php
 		try 
 			{
 			$bdd = new PDO('mysql:host=localhost;dbname=projetweb;charset=utf8', 'root', '');
@@ -38,8 +36,8 @@
 		echo'<li> Inscrit le '.$resultat[0].'</li>';
 
 		$query->closeCursor();
-		?>
 
-	<?php include("footer.php"); ?>
+	include("footer.php"); ?>
+	
  	</body>
  </html>
