@@ -40,19 +40,12 @@
 				}
 				else
 				{
+					echo('<div><a href="signup.php" class="myButton">Accueil</a></div>');
 					echo('<div><a href="signup.php" class="myButton">Inscription</a></div>');
 				}
 				if(isset($_POST["identifiant"]) && isset($_POST["password"]))
 					{
-					try 
-					{
-						$bdd = new PDO('mysql:host=localhost;dbname=cocosound;charset=utf8', 'root', '');
-					}
-					catch (Exception $e)
-					{
-					    die('Erreur : ' . $e->getMessage());
-					}
-
+					include("connect.php");
 					$identifiant = $_POST['identifiant'];
 					$password = $_POST['password'];
 					$query = $bdd->prepare('SELECT Identifiant FROM utilisateur WHERE Identifiant = ?');

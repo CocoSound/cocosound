@@ -118,7 +118,7 @@ html, body {
 	color: black;
 	font-size: 15pt;
 	border-radius: 20px;
-	padding: 3px 10px 3px 10px;
+	padding: 1px 10px 3px 10px;
 	float: right;
 	margin-bottom: 2px;
 	margin-left: 2px;
@@ -147,13 +147,6 @@ html, body {
   	background-size: 1600px 513px;
 }
 
-#searchbar {
-	text-align: center;
-	position: absolute;
-	bottom: 300;
-	left : 200;	
-}
-
 /*##################################################################################
 #########################            SEARCH BAR MAIN         #######################
 ##################################################################################*/
@@ -166,6 +159,7 @@ html, body {
 
 #searchbar {
 	position: relative;
+	text-align: center;
 	width: 480px;
 	left: 30%;
   	top: 50%;
@@ -224,26 +218,27 @@ form select {
 }
 
 #design {
-	height: 30px;
-	width: 95px;
-	text-align: center;
-	margin: 20px;
-	display: inline-block;
-	font-weight: bold;
-	color: #FFF
+	text-align: left;
+	margin: 5px 5px 5px 5px;
+	color: white;
+	padding-left: 45%;
 }
 
 #noms {
-	height: 38px;
-	width: 380px;
-	margin-top: 20px;
-	border: solid black 1px;
-	background-color: #FFFFFF;
-	text-align: left;
+	text-align: center;
+	font-size: 14pt;
+	padding-bottom: 5px;
+	padding-right: 5px;
+}
+
+.swag {
 	display: inline-block;
-	font-family: fantasy;
-	font-size: 17pt;
-	padding-left: 6px;
-	padding-top: 10px;
-	border-radius: 30px;
+	text-align: center;
+	padding-right: 10%;
+	font-style: italic;
+	font-weight: bold;
+}
+
+.swag:last-child {
+	padding-right: 0;
 }

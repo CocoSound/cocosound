@@ -19,16 +19,7 @@
    </head>
    	<body>
 		<?php include("header.php"); 
-
-		try 
-			{
-			$bdd = new PDO('mysql:host=localhost;dbname=projetweb;charset=utf8', 'root', '');
-			}
-		catch (Exception $e)
-				{
-			    die('Erreur : ' . $e->getMessage());
-				}
-
+		include("connect.php");
 		//Affichage de la date d'inscription 
 		$query=$bdd->prepare('SELECT Date_Inscription FROM utilisateur WHERE Identifiant = ?');
 		$query->execute(array($identifiant[0]));

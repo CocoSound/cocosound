@@ -31,15 +31,7 @@
 		<?php
 			if( isset($_POST['upload']) ) // si formulaire soumis
 			{
-			try 
-				{
-					$bdd = new PDO('mysql:host=localhost;dbname=cocosound;charset=utf8', 'root', '');
-				}
-					catch (Exception $e)
-				{
-					die('Erreur : ' . $e->getMessage());
-				}
-			    
+				include("connect.php");
 				$content_dir = './upload/'; // dossier où sera déplacé le fichier
 			    $emplacementTemporaire = $_FILES['fichier']['tmp_name'];
 

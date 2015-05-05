@@ -22,15 +22,7 @@
 					<?php
 						if(isset($_GET['searchby']))
 						{
-							try 
-							{
-								$bdd = new PDO('mysql:host=localhost;dbname=cocosound;charset=utf8', 'root', '');
-							}
-							catch (Exception $e)
-							{
-							    die('Erreur : ' . $e->getMessage());
-							}
-
+							include("connect.php");
 							$searchby = $_GET['searchby'];
 							$key = $_GET['searchkey'];
 							if($searchby == 1)

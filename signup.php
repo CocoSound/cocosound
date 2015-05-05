@@ -31,15 +31,7 @@
 						<?php
 							if(isset($_POST["signup_identifiant"]))
 							{
-								try 
-								{
-									$bdd = new PDO('mysql:host=localhost;dbname=cocosound;charset=utf8', 'root', '');
-								}
-								catch (Exception $e)
-								{
-								        die('Erreur : ' . $e->getMessage());
-								}
-
+								include("connect.php");
 								if(isset($_POST['signup_identifiant']))
 								{
 									$identifiant = $_POST['signup_identifiant'];
