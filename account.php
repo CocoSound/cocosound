@@ -13,7 +13,7 @@
 <html>
    <head>
    	<meta charset='UTF-8'/>
-    	<title>Upload</title>
+    	<title>Account</title>
     	<meta name="viewport" content="width=device-width"/>
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
    </head>
@@ -36,7 +36,7 @@
 		$query->execute(array($identifiant[0]));
 		$resultat = $query->fetch();
 
-		echo'<p> Inscrit le '.$resultat['Date_Inscription'].'</p>';
+		echo '<p> Inscrit le '.$resultat['Date_Inscription'].'</p>';
 
 		$query->closeCursor();
 		?>
