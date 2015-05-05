@@ -32,11 +32,10 @@
 				}
 
 		//Affichage de la date d'inscription 
-		$query=$bdd->prepare('SELECT * FROM utilisateur WHERE Identifiant = ?');
+		$query=$bdd->prepare('SELECT Date_Inscription FROM utilisateur WHERE Identifiant = ?');
 		$query->execute(array($identifiant[0]));
 		$resultat = $query->fetch();
-
-		echo '<p> Inscrit le '.$resultat['Date_Inscription'].'</p>';
+		echo'<li> Inscrit le '.$resultat[0].'</li>';
 
 		$query->closeCursor();
 		?>
