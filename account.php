@@ -40,15 +40,61 @@
 				//si on appuie sur "Supprimer", on enlève l'utilisateur de la base de données
 				if (isset($_POST['OK'])){
 					/*
-					*
-					*
 					à coder
-					*
-					*
 					*/
 				}
 			
 		}
+
+		//formulaire de changement de mot de passe
+		else if(isset($_POST['Change_Password']) || isset($_POST['change'])){
+
+			echo '<form method="post" action="#">
+					<p> Tapez votre mot de passe actuel : </p>
+					<input type="password" name="Ancien_Mot_De_Passe" placeholder="Ancien Mot De Passe">
+					<p> Tapez votre nouveau mot de passe: </p>
+					<input type="password" name="Nouveau_Mot_De_Passe" placeholder="Nouveau Mot De Passe">
+					<p> Retapez votre nouveau mot de passe: </p>
+					<input type="password" name="Nouveau_Mot_De_Passe2" placeholder="Nouveau Mot De Passe">
+					<p><input name="change" value="Mettre à jour le mot de passe" type="submit"></p>
+				</form>';
+
+				$query=$bdd->prepare('SELECT Mot_De_Passe FROM utilisateur WHERE Identifiant = ?');
+				$query->execute(array($identifiant[0]));
+				$resultat = $query->fetch();
+
+				if(isset($_POST['change'])){
+
+				//si les champs ne sont pas tous remplis
+				if($_POST['Nouveau_Mot_De_Passe'] == null 
+					|| $_POST['Nouveau_Mot_De_Passe2'] == null 
+					|| $_POST['Ancien_Mot_De_Passe']==null)
+				{
+					echo '<p> Veuillez remplir tous les champs </p>';
+				}
+
+				//si le mot de passe de base n'est pas le bon
+				else if($resultat[0] != $_POST['Ancien_Mot_De_Passe']){
+						echo '<p> Mot de passe actuel erroné </p>';
+				}
+
+				//si les deux mots de passe entrés ne sont pas les mêmes
+				else if($_POST['Nouveau_Mot_De_Passe'] != $_POST['Nouveau_Mot_De_Passe2'] ){
+						echo '<p> Veuillez entrer des mots de passe identiques </p>';
+				}
+				
+				else{
+					$query1=$bdd->prepare('UPDATE utilisateur SET Mot_De_Passe = :mdp WHERE Identifiant = :id ');
+					$query1->execute(array('mdp'=>$_POST['Nouveau_Mot_De_Passe'], 'id'=>$identifiant[0] ));
+					echo '<p> Votre mot de passe a bien été changé ! </p>';
+					$query1->closeCursor();			
+				}
+				
+				$query->closeCursor();
+			}
+
+		}
+		
 
 		else{
 
@@ -85,23 +131,20 @@
 					<p><input name="Change_Password" value="Changer votre mot de passe" type="submit"></p>
 				</div>';
 
-		if (isset($_POST['Change_Password'])){
-			echo '<p> Veuillez entrer votre nouveau mot de passe : </p>';
-
-		}
+			if (isset($_POST['Change_Password'])){
+				echo '<p> Veuillez entrer votre nouveau mot de passe : </p>';
+			}
 
 		echo '<div id="wrapper2">
 					<input name="Delete_Account" value="Supprimer votre compte" type="submit">
 				</div>';
-
 		}
 
 		echo '</form>';
-
 		?>
 	</div>
 
-	<?php include("footer.php"); ?>
+	<?php //include("footer.php"); ?>
 	
  	</body>
  </html>
