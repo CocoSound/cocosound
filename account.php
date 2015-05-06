@@ -28,6 +28,23 @@
 		<?php
 		include("connect.php");
 
+						//si on appuie sur "Supprimer", on enlève l'utilisateur de la base de données
+				if (isset($_POST['OK'])){
+				$query0=$bdd->prepare('DELETE FROM playlist WHERE Identifiant = ?');
+				$query0->execute(array($identifiant[0]));
+				
+				$query1=$bdd->prepare('DELETE FROM uploader WHERE Identifiant = ?');
+				$query1->execute(array($identifiant[0]));
+
+				$query2=$bdd->prepare('DELETE FROM utilisateur WHERE Identifiant = ?');
+				$query2->execute(array($identifiant[0]));
+
+				session_destroy();
+				header("Location: index.php");
+					
+				}
+			
+
 		//on affiche uniquement ces choix au cas où l'utilisateur souhaite supprimer son compte
 		if (isset($_POST['Delete_Account'])){
 			echo '<p> Etes-vous sûr(e) de vouloir supprimer votre compte ? </p>
@@ -37,13 +54,6 @@
 				</form>';
 
 
-				//si on appuie sur "Supprimer", on enlève l'utilisateur de la base de données
-				if (isset($_POST['OK'])){
-					/*
-					à coder
-					*/
-				}
-			
 		}
 
 		//formulaire de changement de mot de passe
@@ -86,10 +96,9 @@
 				else{
 					$query1=$bdd->prepare('UPDATE utilisateur SET Mot_De_Passe = :mdp WHERE Identifiant = :id ');
 					$query1->execute(array('mdp'=>$_POST['Nouveau_Mot_De_Passe'], 'id'=>$identifiant[0] ));
-					echo '<p> Votre mot de passe a bien été changé ! </p>';
-					$query1->closeCursor();			
+					echo '<p> Votre mot de passe a bien été changé ! </p>';			
 				}
-				
+
 				$query->closeCursor();
 			}
 
