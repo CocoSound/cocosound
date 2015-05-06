@@ -16,15 +16,15 @@
     	<title>Account</title>
     	<meta name="viewport" content="width=device-width"/>
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/account.css" />
    </head>
    	<body>
 
 		<?php include("header.php"); ?>
 
 
-   	<div>
+   	<div id="account">
 
-   	<form id="searchbar">
 		<?php
 		include("connect.php");
 
@@ -57,12 +57,15 @@
 
 
 		echo '<form method="post" action="#">
-				<p><input name="Change_Password" value="Changer votre mot de passe" type="submit"></p>
-				<p><input name="Delete_Account" value="Supprimer votre compte" type="submit"></p>
+				<div id="wrapper1">
+					<p><input name="Change_Password" value="Changer votre mot de passe" type="submit"></p>
+				</div>
+				<div id="wrapper2">
+					<input name="Delete_Account" value="Supprimer votre compte" type="submit">
+				</div>
 			</form>';
 
 		?>
-	</form>
 	</div>
 
 	<?php include("footer.php"); ?>
