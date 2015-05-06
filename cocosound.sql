@@ -68,10 +68,9 @@ CREATE TABLE IF NOT EXISTS `playlist` (
 --
 
 CREATE TABLE IF NOT EXISTS `uploader` (
-  `Artiste` varchar(50) NOT NULL DEFAULT '',
-  `Titre` varchar(50) NOT NULL DEFAULT '',
-  `Identifiant` varchar(100) NOT NULL DEFAULT '',
-  PRIMARY KEY (`Identifiant`,`Artiste`,`Titre`)
+  `Identifiant` varchar(50),
+  `Numero_Musique` int(11),
+  PRIMARY KEY (`Identifiant`,`Numero_Musique`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -115,8 +114,10 @@ ALTER TABLE `playlist`
 --
 -- Contraintes pour la table `uploader`
 --
-ALTER TABLE `uploader`
-  ADD CONSTRAINT `FK_Uploader_Identifiant` FOREIGN KEY (`Identifiant`) REFERENCES `utilisateur` (`Identifiant`);
+ALTER TABLE uploader
+	ADD CONSTRAINT FK_Uploader_Identifiant FOREIGN KEY (Identifiant) REFERENCES utilisateur (Identifiant),
+	ADD CONSTRAINT FK_Uploader_Numero_Musique FOREIGN KEY (Numero_Musique) REFERENCES musique (Numero_Musique);
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
