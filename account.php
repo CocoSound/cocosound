@@ -28,6 +28,30 @@
 		<?php
 		include("connect.php");
 
+		//on affiche uniquement ces choix au cas où l'utilisateur souhaite supprimer son compte
+		if (isset($_POST['Delete_Account'])){
+			echo '<p> Etes-vous sûr(e) de vouloir supprimer votre compte ? </p>
+				<form method="post" action="#">
+					<input name="OK" value="Supprimer le compte" type="submit">
+					<input name="NOK" value="Annuler" type="submit">
+				</form>';
+
+
+				//si on appuie sur "Supprimer", on enlève l'utilisateur de la base de données
+				if (isset($_POST['OK'])){
+					/*
+					*
+					*
+					à coder
+					*
+					*
+					*/
+				}
+			
+		}
+
+		else{
+
 		//Affichadge du pseudo
 		echo '<p> Votre pseudo : '.$identifiant[0].'</p>';
 
@@ -59,11 +83,20 @@
 		echo '<form method="post" action="#">
 				<div id="wrapper1">
 					<p><input name="Change_Password" value="Changer votre mot de passe" type="submit"></p>
-				</div>
-				<div id="wrapper2">
+				</div>';
+
+		if (isset($_POST['Change_Password'])){
+			echo '<p> Veuillez entrer votre nouveau mot de passe : </p>';
+
+		}
+
+		echo '<div id="wrapper2">
 					<input name="Delete_Account" value="Supprimer votre compte" type="submit">
-				</div>
-			</form>';
+				</div>';
+
+		}
+
+		echo '</form>';
 
 		?>
 	</div>
