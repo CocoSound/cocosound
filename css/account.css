@@ -1,0 +1,44 @@
+/*##################################################################################
+#########################            ACCOUNT        		#######################
+##################################################################################*/
+
+#account{
+	color: rgba(255,205,23,0.7);
+	position: relative;
+	font-size: 14pt;
+	text-align: center;
+	width: 480px;
+	left: 30%;
+  	top: 3%;
+	background-color: rgba(39, 39, 39, 0.7);
+	padding: 15px;
+	border-radius: 25px;
+	border: solid 4px;
+	border-color: rgba(255,134,13,0.7);
+}
+
+#wrapper1 {
+	display: inline-block;
+	width: 100%;
+}
+
+#wrapper1 input {
+	color:black;
+	font-size: 13pt;
+	border:	solid black 1px;
+	background-color: rgba(145, 145, 145, 0.7);
+	border-radius: 5px;
+}
+
+#wrapper2 {
+	display: inline-block;
+	width: 100%;
+}
+
+#wrapper2 input {
+	color:black;
+	font-size: 13pt;
+	border:	solid black 1px;
+	background-color: rgba(220,0,0,0.8);
+	border-radius: 5px;
+}
