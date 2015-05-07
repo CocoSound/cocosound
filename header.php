@@ -36,7 +36,9 @@
 					echo('<div id="headerbuttons"><a href="index.php" class="myButton">Accueil</a>');
 					echo('<a href="account.php" class="myButton">Compte</a>');
 					echo('<a href="upload.php" class="myButton">Upload</a>');
-					echo('<a href="mysounds.php" class="myButton">Mes musiques</a></div></div>');
+					echo('<a href="mysounds.php" class="myButton">Mes musiques</a>');
+					echo('<a href="playlists.php" class="myButton">Mes playlists</a></div></div>');
+					
 				}
 				else
 				{

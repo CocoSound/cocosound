@@ -1,0 +1,55 @@
+.createPlaylist {
+	float: left;
+	margin-left: 10px;
+	margin-top: -12%;
+}
+
+#noPlaylists {
+	position: relative;
+	margin-top: 15%;
+	border: solid black 1px;
+	background-color: rgba(255,255,255,0.5);
+}
+
+#noPlaylists p {
+	text-align: center;
+	font-size: 15pt;
+}
+
+.addPlaylistForm {
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+.addPlaylistForm input[type="submit"] {
+  padding: 5px 5px 5px 5px;
+}
+
+.addPlaylistForm input[type="text"] {
+	width: 250px;
+	border-radius: 10px;
+	line-height: 20px;
+	padding-left: 8px;
+}
+
+.user-playlist:nth-child(2) {
+	margin-top: 20px;
+}
+
+.user-playlist {
+	background: linear-gradient(180deg, rgba(255,134,13,0.7) 0%, rgba(255,205,23,0.7) 100%);
+	margin-top: 5px;
+	width: 44%;
+	margin-left: 10px;
+	border: 1px solid black;
+	border-radius: 5px;
+	line-height: 30px;
+	vertical-align: middle;
+}
+
+.user-playlist a {
+	margin-left: 10px;
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+}

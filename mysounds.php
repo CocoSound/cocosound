@@ -20,10 +20,10 @@
    	<body>
             <?php include("header.php"); ?>
             <?php
-               include("connect.php");
-               $query = $bdd->prepare('SELECT * FROM `musique` WHERE `id_user_associe` = "'.$identifiant[0].'"'); // requête SQL
-               $query->execute(); // paramètres et exécution
-               while($Numero_Musique = $query->fetch()) { // lecture par ligne
+				include("connect.php");
+				$query = $bdd->prepare('SELECT * FROM `musique` WHERE `id_user_associe` = "'.$identifiant[0].'"'); // requête SQL
+				$query->execute(); // paramètres et exécution
+				while($Numero_Musique = $query->fetch()) { // lecture par ligne
                    echo ('<div class="sound_container">
                             <div class="sound">
                                     <div class="title">'.$Numero_Musique[Titre].'</div>
