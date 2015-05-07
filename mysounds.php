@@ -18,8 +18,38 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
    </head>
    	<body>
-		<?php include("header.php"); ?>
-		<p>Page en cours de création</p>
-<?php include("footer.php"); ?>
+            <?php include("header.php"); ?>
+            <?php
+               try 
+                {
+                    $bdd = new PDO('mysql:host=localhost;dbname=cocosound;charset=utf8', 'root', '');
+                }
+                catch (Exception $e)
+                {
+                    die('Erreur : ' . $e->getMessage());
+                }
+               $query = $bdd->prepare('SELECT * FROM `musique` WHERE `id_user_associe` = "'.$identifiant[0].'"'); // requête SQL
+               $query->execute(); // paramètres et exécution
+               while($Numero_Musique = $query->fetch()) { // lecture par ligne
+                   echo ('<div class="sound_container">
+                            <div class="sound">
+                                    <div class="title">'.$Numero_Musique[Titre].'</div>
+                                                    <div class="artist">- <b>'.$Numero_Musique[Artiste].'</b></div>
+                                                    <div class="style">'.$Numero_Musique[Genre].'</div>
+                                                    <audio src="'.$Numero_Musique[Chemin_Musique].'" controls></audio>     
+                            </div>
+                            <div class="sound-option">
+                                <button class="button">Lire</button>
+                                <button class="button">Supprimer</button>                            
+                            </div> 
+                            <img src="'.$Numero_Musique[Chemin_Musique].'" alt="Pochette dalbum">
+                                            <div class="endline"></div>           
+                        </div>
+                           ');// traitement de l'enregistrement
+                } // fin des données
+
+               $query->closeCursor();
+            ?>
+            <?php include("footer.php"); ?>
  	</body>
  </html>
