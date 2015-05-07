@@ -11,7 +11,8 @@
 }
 
 #sound_container {
-	background-color: rgba(255,205,23,0.3);
+	background-color: rgba(76,76,76,0.7);
+	color: white;
 }
 
 .sound audio {

@@ -46,7 +46,15 @@
 								if($searchby == 1) $printsearch = "Artiste";
 								if($searchby == 2) $printsearch = "Titre";
 								if($searchby == 3) $printsearch = "Genre";
-								echo('<div id="print_results">Résultats trouvés pour la recherche par <b>'.$printsearch.'</b></br>Mot clé : <b>'.$key.'</b></div>');
+								if(!empty($data))
+								{
+									echo('<div id="print_results">Résultats trouvés pour la recherche par <b>'.$printsearch.'</b></br>Mot clé : <b>'.$key.'</b></div>');
+								}
+								else
+								{
+									echo('<div id="print_results">Aucun résultat trouvé pour la recherche par <b>'.$printsearch.'</b></br>Mot clé : <b>'.$key.'</b></div>');
+								}
+								
 								foreach($data as $value)
 								{
 								echo('

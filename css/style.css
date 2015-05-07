@@ -22,13 +22,15 @@ html, body {
 	height: 20%;
 	width: 100%;
 	min-height: 170px;
-	min-width: 989px;
+	min-width: 1150px;
 }
 
 #alignheader {
   width: 35%;
   display: inline-block;
-  vertical-align: middle;
+  text-align: right;
+  margin-right: 10px;
+  height: 100%;
 }
 
 #header form {
@@ -36,7 +38,7 @@ html, body {
 	position: relative;
   	margin-bottom: 40px;
   	margin-top: 10px;
-  	left: 5px;
+  	text-align: right;
 }
 
 #headerbuttons {
@@ -61,7 +63,7 @@ html, body {
 .logon input {
 	padding: 5px;
 	position: relative;
-  	margin-top: 20px;
+  	margin-top: 5px;
   	border-radius: 10px;
   	background:rgba(155,155,155,0.7);
 }
@@ -83,10 +85,9 @@ html, body {
 }
 
 #header aside {
-	position: absolute;
+	position: relative;
 	color: white;
 	padding: 5px;
-	position: relative;
 }
 
 #logo {
@@ -106,7 +107,7 @@ html, body {
 
 #wrapperlogo {
 	display: inline-block;
-  	width: 64.5%;
+  	width: 63.5%;
 }
 
 /*##################################################################################
@@ -143,7 +144,8 @@ html, body {
 #main {
 	width:	100%;
 	min-width: 985px;
-	height: 68%;
+	height: 100%;
+	padding-bottom: 50px;
   	background-size: 1600px 513px;
 }
 
@@ -154,7 +156,8 @@ html, body {
 
 #container {
 	width: 100%;
-	height:	513px;
+	height:	100%;
+	/*overflow-y: auto;*/
 }
 
 #searchbar {
@@ -162,7 +165,7 @@ html, body {
 	text-align: center;
 	width: 480px;
 	left: 30%;
-  	top: 50%;
+	margin-top: 17%;
 	background-color: rgba(39, 39, 39, 0.7);
 	padding: 15px;
 	border-radius: 25px;
@@ -171,13 +174,14 @@ html, body {
 }
 
 #searchbar input {
-	height: 20px;
+	height: 21px;
 	width: 200px;
 	margin-right: 5px;
 	border-radius: 6px;
 	font-size: 11pt;
   	font-weight: bold;
   	border: solid black 1px;
+  	padding-left: 10px;
 }
 
 #searchbar button {
@@ -203,6 +207,7 @@ html, body {
 form select {
 	border-radius: 10px;
 	height: 25px;
+	width: 75px;
 }
 
 
@@ -211,25 +216,14 @@ form select {
 ##################################################################################*/
 
 #footer {
-	position: fixed;
+	position: absolute;
 	width: 100%;
 	background: #272727;
 	bottom: 0;
-	min-width: 989px;
-}
-
-#design {
-	text-align: left;
-	margin: 5px 5px 5px 5px;
+	min-width: 1150px;
+	height: 50px;
 	color: white;
-	padding-left: 45%;
-}
-
-#noms {
-	text-align: center;
-	font-size: 14pt;
-	padding-bottom: 5px;
-	padding-right: 5px;
+	font-weight: bold;
 }
 
 .swag {
@@ -238,6 +232,12 @@ form select {
 	padding-right: 10%;
 	font-style: italic;
 	font-weight: bold;
+	color: rgb(255,205,23);
+	padding-top: 18px;
+}
+
+.swag:first-child {
+	padding-left: 15%;
 }
 
 .swag:last-child {

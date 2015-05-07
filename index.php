@@ -19,7 +19,7 @@
 			<div id="main">
 				<div id="container">
 					<form id="searchbar" method="get" name="search" action="search_results.php">
-						<input type="text" name ="searchkey" placeholder="Recherchez par..." required>
+						<input type="text" name ="searchkey" placeholder="Recherchez par...">
 						<select name="searchby">
   							<option value=1>Artiste</option>
   							<option value=2>Titre</option>

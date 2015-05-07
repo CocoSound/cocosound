@@ -57,7 +57,7 @@
 						$pwdtest = $query2->fetch();
 						if($password != $pwdtest['0'])
 						{
-							echo ('<p>Mot de passe erroné</p>');
+							echo ('<aside>Mot de passe erroné</aside>');
 						}
 						else
 						{
