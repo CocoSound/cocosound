@@ -20,14 +20,7 @@
    	<body>
             <?php include("header.php"); ?>
             <?php
-               try 
-                {
-                    $bdd = new PDO('mysql:host=localhost;dbname=cocosound;charset=utf8', 'root', '');
-                }
-                catch (Exception $e)
-                {
-                    die('Erreur : ' . $e->getMessage());
-                }
+               include("connect.php");
                $query = $bdd->prepare('SELECT * FROM `musique` WHERE `id_user_associe` = "'.$identifiant[0].'"'); // requête SQL
                $query->execute(); // paramètres et exécution
                while($Numero_Musique = $query->fetch()) { // lecture par ligne
