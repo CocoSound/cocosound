@@ -23,14 +23,13 @@
 		<form id ="upload" method="post" action="upload.php" enctype="multipart/form-data">
 			<div id="wrapper1"><input type="file" name="fichier" size="30"></div>
 			<div id="soundinputs">
-				<aside .align><input type="text" name="Titre" placeholder="Titre"></aside>
-				<aside .align><input type="text" name="Artiste" placeholder="Artiste"></aside>
-				<aside .align><input type="text" name="Style" placeholder="Style"></aside>
+				<aside .align><input type="text" name="Titre" placeholder="Titre" required></aside>
+				<aside .align><input type="text" name="Artiste" placeholder="Artiste" required></aside>
+				<aside .align><input type="text" name="Style" placeholder="Style" required></aside>
 			</div>
 			<div id="wrapper2"><input type="submit" name="upload" value="Upload"></div>
 		<?php
 			if( isset($_POST['upload'])){ // si formulaire soumis
-					if(!empty($_POST['Titre']) && !empty($_POST['Artiste']) && !empty($_POST['Style'])){ 
 						if($_FILES['fichier']['error'] != 0){ 
 						echo('<p>Pas de fichier sélectionné</p>');
 						}
@@ -58,7 +57,7 @@
 												$nbMusiques = $resultat['COUNT(Numero_Musique)'];
 												$query3->closeCursor();
 												
-												//Cas où elle n'est pas dans la base :
+												//Cas où elle N'EST PAS dans la base :
 												if($nbMusiques==0){
 													// On met le fichier dans le répertoirec"upload" sur le serveur
 													$content_dir = './upload/';
@@ -72,7 +71,7 @@
 													$query4->execute(array('val1'=>$artiste, 'val2'=>$titre, 'val3'=>$genre, 'val4'=>$content_dir.$name_file));
 													
 												}
-												//Dans tous les cas :
+												//Dans TOUS LES CAS :
 												// on récupère le numéro de la musique
 												$query5=$bdd->prepare('SELECT Numero_Musique FROM musique WHERE Titre=? AND Artiste=?');
 												$query5->execute(array($titre,$artiste));
@@ -87,10 +86,6 @@
 											}
 								}
 							}
-				    }
-				else{
-					echo("<p>Veuillez renseigner tous les champs</p>");
-				}
 			}
 		?>
 		</form>
