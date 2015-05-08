@@ -118,7 +118,7 @@
 		$query->closeCursor();
 
 		//Affichage du nombre de morceaux uploadés
-		$query=$bdd->prepare('SELECT Count(Titre) FROM uploader WHERE Identifiant = ?');
+		$query=$bdd->prepare('SELECT Count(Numero_Musique) FROM uploader WHERE Identifiant = ?');
 		$query->execute(array($identifiant[0]));
 		$resultat = $query->fetch();
 		echo'<p> Nombre de morceaux uploadés: '.$resultat[0].'</p>';
