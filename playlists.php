@@ -43,13 +43,7 @@
 								$query = $bdd->prepare("SELECT count(*) as nb FROM musiques_playlist WHERE id_playlist = ?");
 								$query->execute(array($playlist['Numero_Playlist']));
 								$nbMusiques = $query->fetch();
-								echo("<form method='POST' class='deleteForm' action='deletePlaylist.php'>
-										<div class='user-playlist'>
-											<a href='playlists.php?id=".$playlist['Numero_Playlist']."'>".$playlist['nom_playlist']." - ".$nbMusiques['nb']." Musiques</a>
-										</div>
-										<input type='hidden' name='playlist_id' value='".$playlist['Numero_Playlist']."' />
-										<input type='submit' class='deletePlaylist' value='Supprimer' />
-									</form>");
+								echo("<div class='user-playlist'><a href='playlists.php?id=".$playlist['Numero_Playlist']."'>".$playlist['nom_playlist']." - ".$nbMusiques['nb']." Musiques</a></div>");
 							}
 						}
 					}
@@ -62,7 +56,7 @@
 							echo('<div id="print_results"><b>Cette playlist n\'existe pas !</b></div>');
 						}
 						else {
-							$query = $bdd->prepare('SELECT Numero_Musique, Artiste, Titre, Genre, Chemin_musique FROM musique
+							$query = $bdd->prepare('SELECT Artiste, Titre, Genre, Chemin_musique FROM musique
 												INNER JOIN musiques_playlist ON musiques_playlist.id_musique = musique.Numero_musique
 												INNER JOIN playlist ON playlist.Numero_playlist = musiques_playlist.id_playlist
 												WHERE playlist.Numero_playlist = :idplaylist');
@@ -86,11 +80,6 @@
 														<div class="style">'.$musique['Genre'].'</div>
 														<div>
 															<audio src="'.$musique['Chemin_musique'].'" controls></audio>
-															<form method="POST" class="deleteSongForm" action="deleteMusicFromPlaylist.php">
-																<input type="hidden" name="musique_id" value="'.$musique['Numero_Musique'].'" />
-																<input type="hidden" name="playlist_id" value="'.$_GET['id'].'" />
-																<input type="submit" value="Enlever de la playlist" />
-															</form>
 														</div>
 													</div>
 												<div class="endline"></div>
