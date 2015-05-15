@@ -32,14 +32,15 @@
 	padding-left: 8px;
 }
 
-.user-playlist:nth-child(2) {
+.deleteForm:nth-child(2) {
 	margin-top: 20px;
 }
 
 .user-playlist {
 	background: linear-gradient(180deg, rgba(255,134,13,0.7) 0%, rgba(255,205,23,0.7) 100%);
 	margin-top: 5px;
-	width: 44%;
+	display: inline-block;
+	width: 70%;
 	margin-left: 10px;
 	border: 1px solid black;
 	border-radius: 5px;
@@ -52,4 +53,25 @@
 	text-decoration: none;
 	color: black;
 	font-weight: bold;
+}
+
+.deletePlaylist {
+	height: 32px;
+	vertical-align: bottom;
+	margin-left: 10px;
+	border-radius: 5px;
+}
+
+.deleteForm {
+	width: 44%;
+}
+
+.deleteSongForm {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.deleteSongForm input[type="submit"] {
+	height: 30px;
+	border-radius: 5px;
 }
