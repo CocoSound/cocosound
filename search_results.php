@@ -82,17 +82,19 @@
                                                                         <audio src="'.$value['Chemin_Musique'].'" controls></audio>
                                                                         ');
                                         if(!empty($identifiant)){
-                                            echo ('                 <div class="playlist_div">'.$select.'</div>
+                                            echo (' 
+                                                                    <div class="playlist_div">'.$select.'</div>
                                                                         <input id="addPlaylist" type="submit" value="Ajouter"/>
-                                                                    </div>
                                                                     <input type="hidden" name="id_musique" value="'.$value['Numero_Musique'].'"/>
+                                                                    ');
+                                        }
+                                        echo('                  </div>
                                                                 </form>
                                                             </div>
                                                         <div class="endline"></div>
                                                     </div>
                                                 </div>
                                             ');
-                                        }
                                     }
                                 
 							}
