@@ -21,21 +21,20 @@
             <?php include("header.php"); ?>
             <?php
 				include("connect.php");
-				$query = $bdd->prepare('SELECT * FROM `musique` WHERE `id_user_associe` = "'.$identifiant[0].'"'); // requête SQL
+				$query = $bdd->prepare('SELECT * FROM musique,uploader WHERE uploader.identifiant = "'.$identifiant[0].'" 
+                                        AND musique.numero_musique = uploader.numero_musique'); // requête SQL
 				$query->execute(); // paramètres et exécution
 				while($Numero_Musique = $query->fetch()) { // lecture par ligne
                    echo ('<div class="sound_container">
                             <div class="sound">
-                                    <div class="title">'.$Numero_Musique[Titre].'</div>
-                                                    <div class="artist">- <b>'.$Numero_Musique[Artiste].'</b></div>
-                                                    <div class="style">'.$Numero_Musique[Genre].'</div>
-                                                    <audio src="'.$Numero_Musique[Chemin_Musique].'" controls></audio>     
+                                    <div class="title">'.$Numero_Musique['Titre'].'</div>
+                                                    <div class="artist">- <b>'.$Numero_Musique['Artiste'].'</b></div>
+                                                    <div class="style">'.$Numero_Musique['Genre'].'</div>
+                                                    <audio src="'.$Numero_Musique['Chemin_Musique'].'" controls></audio>     
                             </div>
                             <div class="sound-option">
-                                <button class="button">Lire</button>
                                 <button class="button">Supprimer</button>                            
                             </div> 
-                            <img src="'.$Numero_Musique[Chemin_Musique].'" alt="Pochette dalbum">
                                             <div class="endline"></div>           
                         </div>
                            ');// traitement de l'enregistrement
