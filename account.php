@@ -110,7 +110,7 @@
 		echo '<p> Votre pseudo : '.$identifiant[0].'</p>';
 
 		//Affichage de la date d'inscription 
-		$query=$bdd->prepare('SELECT Date_Inscription FROM utilisateur WHERE Identifiant = ?');
+		$query=$bdd->prepare('SELECT DATE_FORMAT(Date_Inscription,\'%d/%m/%Y\') FROM utilisateur WHERE Identifiant = ?');
 		$query->execute(array($identifiant[0]));
 		$resultat = $query->fetch();
 		echo'<p> Inscrit le '.$resultat[0].'</p>';
