@@ -27,8 +27,8 @@
 
 		<?php
 		include("connect.php");
-
-						//si on appuie sur "Supprimer", on enlève l'utilisateur de la base de données
+                
+                //si on appuie sur "Supprimer", on enlève l'utilisateur de la base de données
 				if (isset($_POST['OK'])){
 				$query0=$bdd->prepare('DELETE FROM playlist WHERE Identifiant = ?');
 				$query0->execute(array($identifiant[0]));

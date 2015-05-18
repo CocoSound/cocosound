@@ -55,6 +55,8 @@
 									echo('<div id="print_results">Aucun résultat trouvé pour la recherche par <b>'.$printsearch.'</b></br>Mot clé : <b>'.$key.'</b></div>');
 								}
 								
+                                if(!empty($identifiant)){
+                                    
 								$query = $bdd->prepare('SELECT * FROM playlist WHERE identifiant = ?');
 								$query->execute(array($identifiant[0]));
 								$playlists = $query->fetchAll();
@@ -63,29 +65,36 @@
 									$select .= "<option value='".$playlist['Numero_Playlist']."'>".$playlist['nom_playlist']."</option>";
 								}
 								$select .= "</select>";
-								foreach($data as $value)
-								{
-									echo('
-											<div class="rightborder">
-												<div id="sound_container">
-														<div class="sound">
-															<form method="POST" action="addSongInPlaylist.php">
-																<div class="title">'.$value['Titre'].'</div>
-																<div class="artist">- <b>'.$value['Artiste'].'</b></div>
-																<div class="style">'.$value['Genre'].'</div>
-																<div>
-																	<audio src="'.$value['Chemin_Musique'].'" controls></audio>
-																	<div class="playlist_div">'.$select.'</div>
-																	<input id="addPlaylist" type="submit" value="Ajouter"/>
-																</div>
-																<input type="hidden" name="id_musique" value="'.$value['Numero_Musique'].'"/>
-															</form>
-														</div>
-													<div class="endline"></div>
-												</div>
-											</div>
-										');
-								}	
+                                }
+                                
+                                
+                                    foreach($data as $value)
+                                    {
+                                        echo('
+                                                <div class="rightborder">
+                                                    <div id="sound_container">
+                                                            <div class="sound">
+                                                                <form method="POST" action="addSongInPlaylist.php">
+                                                                    <div class="title">'.$value['Titre'].'</div>
+                                                                    <div class="artist">- <b>'.$value['Artiste'].'</b></div>
+                                                                    <div class="style">'.$value['Genre'].'</div>
+                                                                    <div>
+                                                                        <audio src="'.$value['Chemin_Musique'].'" controls></audio>
+                                                                        ');
+                                        if(!empty($identifiant)){
+                                            echo ('                 <div class="playlist_div">'.$select.'</div>
+                                                                        <input id="addPlaylist" type="submit" value="Ajouter"/>
+                                                                    </div>
+                                                                    <input type="hidden" name="id_musique" value="'.$value['Numero_Musique'].'"/>
+                                                                </form>
+                                                            </div>
+                                                        <div class="endline"></div>
+                                                    </div>
+                                                </div>
+                                            ');
+                                        }
+                                    }
+                                
 							}
 						}
 					?>
