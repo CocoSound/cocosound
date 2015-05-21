@@ -216,10 +216,10 @@ form select {
 ##################################################################################*/
 
 #footer {
-	position: absolute;
 	width: 100%;
 	background: #272727;
 	bottom: 0;
+	position: absolute;
 	min-width: 1150px;
 	height: 50px;
 	color: white;

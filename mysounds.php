@@ -16,10 +16,13 @@
     	<title>Mes musiques</title>
     	<meta name="viewport" content="width=device-width"/>
 		  <link rel="stylesheet" type="text/css" href="css/style.css" />
-       		<link rel="stylesheet" type="text/css" href="css/search_results.css" />
+      <link rel="stylesheet" type="text/css" href="css/search_results.css" />
    </head>
    	<body>
+      <div id="wrapper">
+    
             <?php include("header.php"); ?>
+            <div id="main">
             <?php
 				include("connect.php");
                 $query = $bdd->prepare('SELECT * FROM playlist WHERE identifiant = ?');
@@ -65,6 +68,10 @@
 
                $query->closeCursor();
             ?>
+            </div>
             <?php include("footer.php"); ?>
+
+            </div>
+
  	</body>
  </html>

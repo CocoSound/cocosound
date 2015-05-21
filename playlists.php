@@ -26,13 +26,14 @@
 						$query->execute(array($identifiant[0]));
 						$data = $query->fetchAll();	
 						if (count($data) == 0) {
-							echo('<div id="noPlaylists">
-								<p>Vous n\'avez pas encore de playlists, veuillez en créer une !</p>
-							</div>');
 							echo("<form class='addPlaylistForm' action='addPlaylist.php' method='POST'>
 									<input name='playlist_name' type='text' placeholder='Nom de la playlist' required />
 									<input type='submit' value='Créer playlist'/>
 								</form>");
+							echo('<div id="noPlaylists">
+								<p>Vous n\'avez pas encore de playlists, veuillez en créer une !</p>
+							</div>');
+
 						}
 						else {
 							echo("<form class='addPlaylistForm' action='addPlaylist.php' method='POST'>
