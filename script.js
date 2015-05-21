@@ -1,11 +1,13 @@
 function afficher()
 {
 	document.getElementById('style').style.display = 'inline';
+	document.getElementById('search').style.display = 'none';
 }
 
 function cacher()
 {
 	document.getElementById('style').style.display = 'none';
+	document.getElementById('search').style.display = 'inline';
 }
 
 
