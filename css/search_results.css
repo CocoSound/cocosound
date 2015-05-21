@@ -61,3 +61,17 @@
 	display: inline-block;
 	vertical-align: top;
 }
+
+.deleteSongForm {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.deleteSongForm div button {
+	height: 30px;
+}
+
+.addSongPlaylistForm {
+	display: inline;
+	vertical-align: top;
+}
