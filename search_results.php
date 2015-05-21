@@ -35,7 +35,8 @@
 							}
 							else
 							{
-								$query = $bdd->prepare("SELECT * FROM musique WHERE Genre LIKE '%".$key."%'");
+								$style = $_GET['Style'];
+								$query = $bdd->prepare("SELECT * FROM musique WHERE Genre LIKE '%".$style."%'");
 							}
 							
 							if (!empty($query))
