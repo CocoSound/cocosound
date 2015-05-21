@@ -26,10 +26,9 @@ html, body {
 }
 
 #alignheader {
-  width: 35%;
+  width: 65%;
   display: inline-block;
   text-align: right;
-  margin-right: 10px;
   height: 100%;
 }
 
@@ -107,7 +106,6 @@ html, body {
 
 #wrapperlogo {
 	display: inline-block;
-  	width: 63.5%;
 }
 
 /*##################################################################################
