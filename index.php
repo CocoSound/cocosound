@@ -19,13 +19,7 @@
 				<div id="container">
 					<form id="searchbar" method="get" name="search" action="search_results.php">
 						<input type="text" name ="searchkey" placeholder="Recherchez par..." style="display: inline;" id="search">
-						<select name="searchby" id="genre">
-  							<option value=1>Artiste</option>
-  							<option value=2>Titre</option>
-  							<option value=3>Genre</option>
-						</select>
 						<select name="Style" id="style" style="display: none;">
-  							<option value="choix">Genre</option>
   							<option value="alternative">Alternative</option>
   							<option value="classique">Classique</option>
   							<option value="dance">Dance</option>
@@ -39,7 +33,12 @@
 							<option value="reggae">Reggae</option>
   							<option value="rock">Rock</option>
   							<option value="transcendantale">Transcendantale</option>
-					</select>
+						</select>
+						<select name="searchby" id="genre">
+  							<option value=1>Artiste</option>
+  							<option value=2>Titre</option>
+  							<option value=3>Genre</option>
+						</select>
 						<button type="submit">Recherche</button>
 					</form>
 				</div>
