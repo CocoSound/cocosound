@@ -40,7 +40,6 @@
   							<option value="rb">R&amp;B</option>
 							<option value="reggae">Reggae</option>
   							<option value="rock">Rock</option>
-  							<option value="transcendantale">Transcendantale</option>
 					</select>
 				</aside>
 			</div>
@@ -91,7 +90,7 @@
 															$content_dir = './upload/';
 															$emplacementTemporaire = $_FILES['fichier']['tmp_name'];
 															$name_file = $_FILES['fichier']['name'];
-															move_uploaded_file($emplacementTemporaire, $content_dir . basename($name_file));
+															move_uploaded_file($emplacementTemporaire, $content_dir .$name_file);
 															
 															// Et on ajoute une instance dans la base musique
 															$genre=strtolower($_POST['Style']);

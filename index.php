@@ -32,7 +32,6 @@
   							<option value="rb">R&amp;B</option>
 							<option value="reggae">Reggae</option>
   							<option value="rock">Rock</option>
-  							<option value="transcendantale">Transcendantale</option>
 						</select>
 						<select name="searchby" id="genre">
   							<option value=1>Artiste</option>
